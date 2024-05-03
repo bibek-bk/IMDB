@@ -2,9 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { data } from "../../utils/constants";
+import VerticalCart from "./VerticalCart";
+import MainCard from "./MainCard";
 
 const Sliderr = () => {
-  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  const items = data;
 
   const mainSliderRef = useRef();
   const verticalSliderRef = useRef();
@@ -65,7 +69,7 @@ const Sliderr = () => {
                 key={index}
                 className="bg-blue-500 h-40 flex justify-center items-center"
               >
-                {item}
+               <MainCard item={item}/>
               </div>
             ))}
           </Slider>
@@ -93,7 +97,7 @@ const Sliderr = () => {
               key={index}
               className="bg-green-500 h-16 flex justify-center items-center"
             >
-              {item}
+              <VerticalCart item={item}/>
             </div>
           ))}
         </Slider>
@@ -103,3 +107,8 @@ const Sliderr = () => {
 };
 
 export default Sliderr;
+
+
+
+
+

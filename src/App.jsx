@@ -1,17 +1,34 @@
 import { Provider } from "react-redux"
-import Header from "./components/Header/Header"
 import store from './store/store'
-import { RouterProvider } from "react-router-dom"
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import Body from "./components/Body/Body"
+import Home from "./components/Home/Home"
+import Watch from "./components/Watch/Watch"
 function App() {
 
-
+const router  = createBrowserRouter([
+  {
+    path:"/",
+    element:<Body/>,
+    children:[
+      {
+        path:'/',
+        element:<Home/>
+      },
+      {
+        path:'/watch',
+        element:<Watch/>
+      },
+      
+    ]
+  }
+])
 
   return (
     <>
 <Provider store={store}>
-<RouterProvider />
+<RouterProvider router={router}/>
 </Provider>
-    <Header/>
      </>
   )
 }
