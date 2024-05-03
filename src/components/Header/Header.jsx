@@ -3,7 +3,7 @@ import Search from "./Search";
 
 function Header() {
   return (
-    <divv className="w-full px-16 bg-[#121212] text-white flex items-center justify-between py-4 ">
+    <div className="w-full px-16 bg-[#121212] text-white flex items-center justify-between py-4 ">
       <img src={LOGO_URL} alt="LOGO" className="w-16" />
       <Search />
       <button className="flex items-center gap-2 ">
@@ -18,7 +18,7 @@ function Header() {
         user
       </div>
       <div className="EN text-sm">EN ^ </div>
-    </divv>
+    </div>
   );
 }
 
